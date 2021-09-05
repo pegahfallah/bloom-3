@@ -22,6 +22,9 @@ describe("Token", function () {
     const owner = await token.owner();
     const totalSupply = await token.totalSupply();
     console.log(owner, totalSupply); //random address hardhat creates
+    //big number library to represent nums as hex code --> larger than what JS can handle
+    //numbers from solidity are always bignumbers
+    console.log(totalSupply.toString());
     expect(await token.balances(owner)).to.equal(totalSupply);
   });
   // it("sets the owner to the deployer", async function () {});
